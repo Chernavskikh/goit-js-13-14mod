@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>13-14</title>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/tamplate.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+<div class="wrapper">
+<h3>Мини-тест</h3>
+<script type="text/tamplate" id="test">
+<ol>
+<% for (var i = 0; i < data.length; i++) { %>  
+	<li><%= data[i].question %></li>
+		<ul>
+		<% for (var j = 0; j < data[i].answer.length; j++) { %>
+    	<li><input type="checkbox" name="<%= data[i].name %>" class="checkbox" value="<%= data[i].check[j] %>"><%= data[i].answer[j] %></li>
+    	<% }; %>
+	</ul>
+<% }; %>
+</ol>
+</script>
+<button class="btn btn-primary btn-block">Проверить мои результаты</button>	
+
+<div id="modal_form"><!-- Сaмo oкнo --> 
+      <span id="modal_close">x</span> <!-- Кнoпкa зaкрыть --> 
+      <p class="modal_text text-success"></p>
+</div>
+<div id="overlay"></div><!-- Пoдлoжкa -->
+
+</div>
+</body>
+</html>
