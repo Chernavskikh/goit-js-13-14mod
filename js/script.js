@@ -1,6 +1,6 @@
 'use strict';
 //объявляем массив объектов с вопросами и ответами
-var testData = [
+let testData = [
 {
     question: '1+1=?',
     answer: ['2', '3', '4'],
@@ -26,11 +26,11 @@ localStorage.setItem('questionAnswer', JSON.stringify(testData));
 
 $(function() {
 //формируем тест с помощью шаблонизатора
-var test = $('#test').html();
-var content = localStorage.getItem('questionAnswer');
+let test = $('#test').html();
+let content = localStorage.getItem('questionAnswer');
 content = JSON.parse(content);
 
-var page = tmpl(test, { 
+let page = tmpl(test, { 
     data: content
 });
 
